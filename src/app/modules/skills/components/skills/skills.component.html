@@ -1,0 +1,37 @@
+<div class="container">
+
+  <span><h2>Skills Details</h2></span>
+
+  <ng-container *ngIf="emp !== undefined && emp !== null">
+    <div class="skill-container">
+      <div class="item">
+        <span><b>Name</b></span>
+        <span>{{emp.firstName}} {{emp.lastName}}</span>
+      </div>
+      <div class="item">
+        <span><b>Department</b></span>
+        <span>{{emp.department}}</span>
+      </div>
+      <div class="item">
+        <span><b>Country</b></span>
+        <span>{{emp.country}}</span>
+      </div>
+      <div class="item">
+        <span><b>Experience</b></span>
+        <span>{{emp.experience}}</span>
+      </div>
+      <div class="item">
+        <span><b>Skills</b></span>
+        <span class="skill" *ngFor="let item of skills">{{item}}</span>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="emp === undefined || emp === null">
+    <div><h3>No details found</h3></div>
+  </ng-container>
+
+
+  <button mat-flat-button (click)="goBack()">Back</button>
+</div>
+
